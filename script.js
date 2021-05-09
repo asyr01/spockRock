@@ -27,6 +27,8 @@ const choices = {
   spock: { name: 'Spock', defeats: ['scissors', 'rock'] },
 };
 
+let computerChoice = '';
+
 // Reset all 'selected' icons
 function resetSelected() {
   allGameIcons.forEach((icon) => {
@@ -34,10 +36,33 @@ function resetSelected() {
   });
 }
 
-// Passing player selection value, styling icons
-function select(playerChoice) {
-  // reset before starting new rock-paper-scissors
+// Random computer choice
+function computerRandomChoice() {
+  const computerChoiceNumber = Math.random();
+  if (computerChoiceNumber < 0.2) {
+    computerChoice = 'rock';
+    computerChoice.textContent = '--- Rock';
+  } else if (computerChoiceNumber <= 0.4) {
+    computerChoice = 'paper';
+  } else if (computerChoiceNumber <= 0.6) {
+    computerChoice = 'scissors';
+  } else if (computerChoiceNumber <= 0.8) {
+    computerChoice = 'lizard';
+  } else {
+    computerChoice = 'spock';
+  }
+}
+
+// Call functions to process turn
+function checkResult() {
   resetSelected();
+  computerRandomChoice();
+}
+
+// Passing player selection value, styling icons
+
+function select(playerChoice) {
+  checkResult();
   // add selected styling & playerChoice
   switch (playerChoice) {
     case 'rock':
