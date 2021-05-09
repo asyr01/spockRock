@@ -57,10 +57,38 @@ function computerRandomChoice() {
 function checkResult() {
   resetSelected();
   computerRandomChoice();
+  displayComputerChoice();
+}
+
+// Add 'selected styling & computerChoice
+function displayComputerChoice() {
+  switch (computerChoice) {
+    case 'rock':
+      computerRock.classList.add('selected');
+      computerChoiceEl.textContent = ` --- Rock`;
+      break;
+    case 'paper':
+      computerPaper.classList.add('selected');
+      computerChoiceEl.textContent = ` --- Paper`;
+      break;
+    case 'scissors':
+      computerScissors.classList.add('selected');
+      computerChoiceEl.textContent = ` --- Scissors`;
+      break;
+    case 'lizard':
+      computerLizard.classList.add('selected');
+      computerChoiceEl.textContent = ` --- Lizard`;
+      break;
+    case 'spock':
+      computerSpock.classList.add('selected');
+      computerChoiceEl.textContent = ` --- Spock`;
+      break;
+    default:
+      break;
+  }
 }
 
 // Passing player selection value, styling icons
-
 function select(playerChoice) {
   checkResult();
   // add selected styling & playerChoice
