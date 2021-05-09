@@ -27,8 +27,17 @@ const choices = {
   spock: { name: 'Spock', defeats: ['scissors', 'rock'] },
 };
 
+// Reset all 'selected' icons
+function resetSelected() {
+  allGameIcons.forEach((icon) => {
+    icon.classList.remove('selected');
+  });
+}
+
 // Passing player selection value, styling icons
 function select(playerChoice) {
+  // reset before starting new rock-paper-scissors
+  resetSelected();
   // add selected styling & playerChoice
   switch (playerChoice) {
     case 'rock':
