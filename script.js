@@ -45,6 +45,9 @@ function resetAll() {
   computerScoreNumber = 0;
   playerScoreEl.textContent = 0;
   computerScoreEl.textContent = 0;
+  playerChoiceEl.textContent = '';
+  computerChoiceEl.textContent = '';
+  resultText.textContent = '';
   resetSelected();
 }
 
