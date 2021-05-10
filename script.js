@@ -1,4 +1,5 @@
 const playerScoreEl = document.getElementById('player-score');
+const computerScoreEl = document.getElementById('computer-score');
 const playerChoiceEl = document.getElementById('player-choice');
 const computerChoiceEl = document.getElementById('computer-choice');
 const resultText = document.getElementById('result-text');
@@ -59,6 +60,17 @@ function computerRandomChoice() {
 function updateScore(playerChoice) {
   if (playerChoice === computerChoice) {
     resultText.textContent = "It's a tie.";
+  } else {
+    const choice = choices[playerChoice];
+    if (choice.defeats.includes(computerChoice)) {
+      resultText.textContent = 'You Won!';
+      playerScoreNumber++;
+      playerScoreEl.textContent = playerScoreNumber;
+    } else {
+      resultText.textContent = 'You Lost!';
+      computerScorNumber++;
+      computerScoreEl.textContent = computerScorNumber;
+    }
   }
 }
 
