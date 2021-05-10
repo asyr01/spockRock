@@ -29,7 +29,7 @@ const choices = {
 };
 
 let playerScoreNumber = 0;
-let computerScorNumber = 0;
+let computerScoreNumber = 0;
 let computerChoice = '';
 
 // Reset all 'selected' icons
@@ -37,6 +37,15 @@ function resetSelected() {
   allGameIcons.forEach((icon) => {
     icon.classList.remove('selected');
   });
+}
+
+// Reset score & playerChoice when reset btn is clicked.
+function resetAll() {
+  playerScoreNumber = 0;
+  computerScoreNumber = 0;
+  playerScoreEl.textContent = 0;
+  computerScoreEl.textContent = 0;
+  resetSelected();
 }
 
 // Random computer choice
@@ -68,8 +77,8 @@ function updateScore(playerChoice) {
       playerScoreEl.textContent = playerScoreNumber;
     } else {
       resultText.textContent = 'You Lost!';
-      computerScorNumber++;
-      computerScoreEl.textContent = computerScorNumber;
+      computerScoreNumber++;
+      computerScoreEl.textContent = computerScoreNumber;
     }
   }
 }
