@@ -1,7 +1,7 @@
 // Confetti.js - downloaded from https://www.cssscript.com/confetti-falling-animation/
 
 var confetti = {
-  maxCount: 600, //set max confetti count
+  maxCount: 10, //set max confetti count
   speed: 2, //set the particle animation speed
   frameInterval: 15, //the confetti animation frame interval in milliseconds
   alpha: 1.0, //the alpha opacity of the confetti (between 0 and 1, where 1 is opaque and 0 is invisible)
